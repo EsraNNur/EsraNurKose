@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happy Birthday Esra</title>
+<style>
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: fadein 3s;
+  margin-top: 10%;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: fadein 3s;
+}
+
+p {
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px; /* Kenarları daraltma */
+   animation: fadein 3s;
+}
+
+body {
+  background: linear-gradient(to right, pink, purple); /* Gradyan arka plan */
+  display: flex; /* Ekranda ortalama */ 
+  align-items: center; /* Ekranda ortalama */ 
+  justify-content: center; /* Ekranda ortalama */ 
+  flex-direction: column; /* Metinleri alt alta sıralama */ /* Bu satırı ekleme */
+	margin: 0;
+	
+}
+svg {
+	display: block; /* Ekranda ortalama */ 
+    width: 100px;
+	 animation: fadein 3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+	audio {
+  display: none;
+}
+</style>
+</head>
+<body>
+<h1 id="message"></h1>
+<h2 id="age"></h2>	
+<p id="greeting"></p> <!-- Mesajı göstermek için bir element ekleme -->
+<a class="link1" id="link1"></a>
+<a id="anim"></a>
+<audio id="mp1"></audio>
+	
+<script>
+// Önceden tanımlanan kişinin doğum günü, ayı ve yılını değişkenler olarak belirtin
+var birthday = 16; // Gün
+var birthmonth = 04; // Ay
+var birthyear = 2001; // Yıl
+
+// Şu anki tarihi alın
+var today = new Date();
+var day = today.getDate();
+var month = today.getMonth() + 1; // Ocak ayı 0 olarak sayılır
+var year = today.getFullYear();
+
+// Doğum günü mesajını göstermek için bir element seçin
+var message = document.getElementById("message");
+
+// Yaşı hesaplamak için bir fonksiyon tanımlayın
+function calculateAge(birthyear, year) {
+  var age = year - birthyear;
+  return age;
+}
+
+// Yaşı göstermek için bir element seçin
+var age = document.getElementById("age");
+
+// Doğum günü kutlama mesajını göstermek için bir element seçin
+var greeting = document.getElementById("greeting");
+var anim = document.getElementById("anim");
+var mp1 = document.getElementById("mp1");
+
+// Eğer bugün doğum günü ise mesaj ve yaş gösterin
+if (day == birthday && month == birthmonth) {
+  message.innerHTML = "Doğum günün kutlu olsun! ❤️"; // Kalpli emoji ekleme
+  age.innerHTML = "Bu gün senin yeni yaşın: " + calculateAge(birthyear, year);
+  
+  // Doğum günü kutlama mesajını gösterme
+  greeting.innerHTML = "Canım arkadaşım<br><br>Bugün senin doğum günün ve ben de sana en içten dileklerimi gönderiyorum.<br>Seninle tanıştığım günden beri hayatıma renk kattın. Seninle geçirdiğim her an çok değerli ve unutulmaz.<br>Sen benim en yakın dostum, en iyi arkadaşım ve en güzel hediyemsin.<br>Seninle birlikte daha nice yıllara, nice mutluluklara ve nice maceralara ulaşmak dileğiyle.<br><br>Doğum günün kutlu olsun! Seni çok seviyorum! ❤️<br><br>Sevgili ben.";
+	anim.innerHTML = "<center><a href='https://www.instagram.com/_esraa_nnurr_/' target='_blank'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><style type='text/css'>@keyframes draw{100%{stroke-dashoffset: 0}}path{animation: draw 2s ease-in-out infinite}</style><clipPath id='hc'><path d='M 191 207 C 162 162 112 54 51 70 C -22 121 143 314 188 356 C 234 303 400 157 352 88 C 324 54 214 171 191 207 Z '/></clipPath></defs><path fill='none' stroke='#DA72B2' stroke-width='44' stroke-linecap='round' stroke-dasharray='3703' stroke-dashoffset='3703' clip-path='url(#hc)' d='M 120 0 C 88 77 -2 154 3 160 C 8 166 182 47 189 57 C 196 67 2 223 7 228 C 12 233 183 98 192 109 C 201 120 24 280 31 289 C 38 298 349 44 356 53 C 363 62 73 310 88 329 C 304 201 387 88 383 85 C 379 82 112 361 121 370 C 130 379 348 162 356 171'></path></svg></a></center>";
+	var randomNum = Math.floor(Math.random() * 3);
+	if(randomNum == 0){
+		mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2021/12/16/audio_e13e329328.mp3?filename=embrace-12278.mp3' controls autoplay loop></audio>"
+	}
+	else if (randomNum == 1){ mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_676747013a.mp3?filename=coniferous-forest-142569.mp3' controls autoplay loop></audio>"}
+	else{
+		mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_84306ee149.mp3?filename=please-calm-my-mind-125566.mp3' controls autoplay loop></audio>"
+	}
+} else {
+  message.innerHTML = "Bugün senin doğum gününüz değil. 🙁";
+  age.innerHTML = "Yaşın: " + calculateAge(birthyear, year);
+}
+</script>
+</body>
+</html>
