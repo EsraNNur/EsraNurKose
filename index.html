@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <!-- Eğer olurda bir gün bu arkadaşlığımız son bulursa unutma diye her daim yanındayım. -->
 <html lang="tr">
-<head>
+	<head>
 	
 	<meta charset="utf-8">
 	<title>Esra Nur Köse</title>
@@ -347,10 +348,11 @@ svg {
 <a title="Instagram" id="anim"></a>
 <div  title="Muhammed Osman Dualı" id="dd"></div>
 
-<audio id="mp1" controls autoplay loop preload="none" ></audio>
+<audio id="mp1" controls autoplay loop ></audio>
 	
 	
 <script>
+	
 // Önceden tanımlanan kişinin doğum günü, ayı ve yılını değişkenler olarak belirtin
 var birthday = 16; // Gün
 var birthmonth = 04; // Ay
@@ -382,7 +384,10 @@ var dd = document.getElementById("dd");
 
 // Eğer bugün doğum günü ise mesaj ve yaş gösterin
 if (day == birthday && month == birthmonth) {
-  message.innerHTML = "Doğum günün kutlu olsun! ❤️"; // Kalpli emoji ekleme
+	if (navigator.userAgent.indexOf('Android') !== -1) {
+  	message.innerHTML = "Android bir tarayıcı da bu sayfa desteklenmiyorum. Lütfen laptop veya pc ye geçiniz."; // Kalpli emoji ekleme
+} else {
+	 message.innerHTML = "Doğum günün kutlu olsun! ❤️"; // Kalpli emoji ekleme
   age.innerHTML = "Bu gün artık " + calculateAge(birthyear, year)+" yaşına girdin. 🎉";
   
   // Doğum günü kutlama mesajını gösterme
@@ -393,21 +398,24 @@ if (day == birthday && month == birthmonth) {
 	dd.innerHTML = "<br>16.04.2023 - "+day+"."+month+"."+year+"<br>∞ Eternal Dear Friend";
 	var randomNum = Math.floor(Math.random() * 8);
 	switch(randomNum){
-		case 0: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_684ca37dc0.mp3?filename=mountain-path-125573.mp3' autoplay ></audio>"; break;
-		case 1: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_676747013a.mp3?filename=coniferous-forest-142569.mp3'autoplay ></audio>"; break;
-		case 2: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_84306ee149.mp3?filename=please-calm-my-mind-125566.mp3'autoplay ></audio>"; break;
-		case 3: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/05/05/audio_1395e7800f.mp3?filename=forest-lullaby-110624.mp3'autoplay ></audio>"; break;
-		case 4: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_1af448eac2.mp3?filename=into-myself-142610.mp3'autoplay ></audio>"; break;
-		case 5: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/02/22/audio_15ba243025.mp3?filename=sad-21403.mp3'autoplay ></audio>"; break;
-		case 6: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/02/21/audio_aecab9590c.mp3?filename=emotional-conversation-140029.mp3'autoplay ></audio>"; break;
-		case 7: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_185a29ae97.mp3?filename=the-last-goodbye-142612.mp3' autoplay></audio>"; break;
+		case 0: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_684ca37dc0.mp3?filename=mountain-path-125573.mp3' autoplay></audio>";console.log(randomNum); break;
+		case 1: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_676747013a.mp3?filename=coniferous-forest-142569.mp3'autoplay></audio>";console.log(randomNum); break;
+		case 2: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_84306ee149.mp3?filename=please-calm-my-mind-125566.mp3'autoplay></audio>"; console.log(randomNum);break;
+		case 3: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/05/05/audio_1395e7800f.mp3?filename=forest-lullaby-110624.mp3'autoplay></audio>"; console.log(randomNum); break;
+		case 4: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_1af448eac2.mp3?filename=into-myself-142610.mp3'autoplay></audio>"; console.log(randomNum); break;
+		case 5: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/02/22/audio_15ba243025.mp3?filename=sad-21403.mp3'autoplay></audio>"; console.log(randomNum); break;
+		case 6: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/02/21/audio_aecab9590c.mp3?filename=emotional-conversation-140029.mp3'autoplay></audio>"; console.log(randomNum); break;
+		case 7: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_185a29ae97.mp3?filename=the-last-goodbye-142612.mp3' autoplay></audio>"; console.log(randomNum); break;
 	}
 
 	
-	
+}
 } else {
   message.innerHTML = "<h1>Acelecisin! 16.04."+year+"`e kadar beklemen gerekiyor.</h1>";
 }
+  
+
+ 
 </script>
 </body>
 </html>
