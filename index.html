@@ -356,34 +356,30 @@ var dd = document.getElementById("dd");
 
 // Eğer bugün doğum günü ise mesaj ve yaş gösterin
 
-	if (navigator.userAgent.indexOf('Android') !== -1) {
-  		message.innerHTML = "Android bir tarayıcıda bu sayfa desteklenmiyorum. Lütfen laptop veya pc ye geçiniz.";
-	} 	
-	else {
-		if (day == birthday && month == birthmonth) {
-			 message.innerHTML = "Doğum günün kutlu olsun! ❤️"; // Kalpli emoji ekleme
-		  age.innerHTML = "Bu gün artık " + calculateAge(birthyear, year)+" yaşına girdin. 🎉";
-			greeting.innerHTML =
-		  "<span>Canım</span> <span>arkadaşım</span> <span>Esra,</span><br><span>Bugün</span> <span>senin</span> <span>doğum</span> <span>günün</span> <span>ve</span> <span>ben</span> <span>de</span> <span>sana</span> <span>en</span> <span>içten</span> <span>dileklerimi</span> <span>iletiyorum.</span><br><span>Seninle</span> <span>tanıştığım</span> <span>günden</span> <span>beri</span> <span>hayatıma</span> <span>renk</span> <span>kattın.</span> <span>Umarım</span> <span>ben</span> <span>de</span> <span>hayatını</span> <span>az</span> <span>da</span> <span>olsa</span> <span>renklendirmişimdir.</span><br><span>Seninle</span> <span>geçirdiğim</span> <span>her</span> <span>an</span> <span>çok</span> <span>değerli</span> <span>ve</span> <span>unutulmaz.</span> <span>Sen</span> <span>benim</span> <span>en</span> <span>yakın</span> <span>dostum,</span> <span>en</span> <span>iyi</span> <span>arkadaşım</span> <span>ve</span> <span>en</span> <span>güzel</span> <span>hediyemsin.</span><br> <span>Seninle</span> <span>birlikte</span> <span>daha</span> <span>nice</span> <span>yıllara,</span> <span>nice</span> <span>mutluluklara</span> <span>ve</span> <span>nice</span> <span>maceralara</span> <span>ulaşmak</span> <span>dileğiyle.</span><br><span>Doğum</span> <span>günün</span> <span>kutlu</span> <span>olsun! 🎂</span> <span>Seni</span> <span>çok</span> <span>seviyorum! ❤️</span> <span title='Muhammed Osman Dualı'>Ben arkadaşın. 🤓</span>";
-			anim.innerHTML = "<center><a href='https://www.instagram.com/_esraa_nnurr_/' target='_blank'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><style type='text/css'>@keyframes draw{100%{stroke-dashoffset: 0}}path{animation: draw 2s ease-in-out infinite}</style><clipPath id='hc'><path d='M 191 207 C 162 162 112 54 51 70 C -22 121 143 314 188 356 C 234 303 400 157 352 88 C 324 54 214 171 191 207 Z '/></clipPath></defs><path fill='none' stroke='#DA72B2' stroke-width='44' stroke-linecap='round' stroke-dasharray='3703' stroke-dashoffset='3703' clip-path='url(#hc)' d='M 120 0 C 88 77 -2 154 3 160 C 8 166 182 47 189 57 C 196 67 2 223 7 228 C 12 233 183 98 192 109 C 201 120 24 280 31 289 C 38 298 349 44 356 53 C 363 62 73 310 88 329 C 304 201 387 88 383 85 C 379 82 112 361 121 370 C 130 379 348 162 356 171'></path></svg></a></center>";
-			dd.innerHTML = "<br>16.04.2023 - "+day+"."+month+"."+year+"<br>∞ Eternal Dear Friend";
-			var randomNum = Math.floor(Math.random() * 8);
-			switch(5){
-				case 0: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_684ca37dc0.mp3?filename=mountain-path-125573.mp3' autoplay loop></audio>";console.log(randomNum); break;
-				case 1: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_676747013a.mp3?filename=coniferous-forest-142569.mp3' autoplay loop></audio>";console.log(randomNum); break;
-				case 2: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_84306ee149.mp3?filename=please-calm-my-mind-125566.mp3' autoplay loop></audio>"; console.log(randomNum);break;
-				case 3: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/05/05/audio_1395e7800f.mp3?filename=forest-lullaby-110624.mp3' autoplay loop></audio>"; console.log(randomNum); break;
-				case 4: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_1af448eac2.mp3?filename=into-myself-142610.mp3' autoplay loop></audio>"; console.log(randomNum); break;
-				case 5: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/02/22/audio_15ba243025.mp3?filename=sad-21403.mp3' autoplay loop></audio>"; console.log(randomNum); break;
-				case 6: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/02/21/audio_aecab9590c.mp3?filename=emotional-conversation-140029.mp3' autoplay loop></audio>"; console.log(randomNum); break;
-				case 7: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_185a29ae97.mp3?filename=the-last-goodbye-142612.mp3' autoplay loop></audio>"; console.log(randomNum); break;
-			}
-	}else {
+	if (day == birthday && month == birthmonth) {
+		message.innerHTML = "Doğum günün kutlu olsun! ❤️"; // Kalpli emoji ekleme
+		age.innerHTML = "Bu gün artık " + calculateAge(birthyear, year) + " yaşına girdin. 🎉";
+		greeting.innerHTML =
+			"<span>Canım</span> <span>arkadaşım</span> <span>Esra,</span><br><span>Bugün</span> <span>senin</span> <span>doğum</span> <span>günün</span> <span>ve</span> <span>ben</span> <span>de</span> <span>sana</span> <span>en</span> <span>içten</span> <span>dileklerimi</span> <span>iletiyorum.</span><br><span>Seninle</span> <span>tanıştığım</span> <span>günden</span> <span>beri</span> <span>hayatıma</span> <span>renk</span> <span>kattın.</span> <span>Umarım</span> <span>ben</span> <span>de</span> <span>hayatını</span> <span>az</span> <span>da</span> <span>olsa</span> <span>renklendirmişimdir.</span><br><span>Seninle</span> <span>geçirdiğim</span> <span>her</span> <span>an</span> <span>çok</span> <span>değerli</span> <span>ve</span> <span>unutulmaz.</span> <span>Sen</span> <span>benim</span> <span>en</span> <span>yakın</span> <span>dostum,</span> <span>en</span> <span>iyi</span> <span>arkadaşım</span> <span>ve</span> <span>en</span> <span>güzel</span> <span>hediyemsin.</span><br> <span>Seninle</span> <span>birlikte</span> <span>daha</span> <span>nice</span> <span>yıllara,</span> <span>nice</span> <span>mutluluklara</span> <span>ve</span> <span>nice</span> <span>maceralara</span> <span>ulaşmak</span> <span>dileğiyle.</span><br><span>Doğum</span> <span>günün</span> <span>kutlu</span> <span>olsun! 🎂</span> <span>Seni</span> <span>çok</span> <span>seviyorum! ❤️</span> <span title='Muhammed Osman Dualı'>Ben arkadaşın. 🤓</span>";
+		anim.innerHTML = "<center><a href='https://www.instagram.com/_esraa_nnurr_/' target='_blank'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><style type='text/css'>@keyframes draw{100%{stroke-dashoffset: 0}}path{animation: draw 2s ease-in-out infinite}</style><clipPath id='hc'><path d='M 191 207 C 162 162 112 54 51 70 C -22 121 143 314 188 356 C 234 303 400 157 352 88 C 324 54 214 171 191 207 Z '/></clipPath></defs><path fill='none' stroke='#DA72B2' stroke-width='44' stroke-linecap='round' stroke-dasharray='3703' stroke-dashoffset='3703' clip-path='url(#hc)' d='M 120 0 C 88 77 -2 154 3 160 C 8 166 182 47 189 57 C 196 67 2 223 7 228 C 12 233 183 98 192 109 C 201 120 24 280 31 289 C 38 298 349 44 356 53 C 363 62 73 310 88 329 C 304 201 387 88 383 85 C 379 82 112 361 121 370 C 130 379 348 162 356 171'></path></svg></a></center>";
+		dd.innerHTML = "<br>16.04.2023 - " + day + "." + month + "." + year + "<br>∞ Eternal Dear Friend";
+		var randomNum = Math.floor(Math.random() * 8);
+		switch (5) {
+			case 0: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_684ca37dc0.mp3?filename=mountain-path-125573.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 1: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_676747013a.mp3?filename=coniferous-forest-142569.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 2: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/11/11/audio_84306ee149.mp3?filename=please-calm-my-mind-125566.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 3: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/05/05/audio_1395e7800f.mp3?filename=forest-lullaby-110624.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 4: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_1af448eac2.mp3?filename=into-myself-142610.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 5: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2022/02/22/audio_15ba243025.mp3?filename=sad-21403.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 6: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/02/21/audio_aecab9590c.mp3?filename=emotional-conversation-140029.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+			case 7: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_185a29ae97.mp3?filename=the-last-goodbye-142612.mp3' autoplay loop></audio>"; console.log(randomNum); break;
+		}
+	} else {
 		if(day>birthday && month>=birthmonth){
 			message.innerHTML = "<h1>Acelecisin! 16.04."+(year+1)+"`e kadar beklemen gerekiyor.</h1>";
 		}else{message.innerHTML = "<h1>Acelecisin! 16.04."+(year)+"`e kadar beklemen gerekiyor.</h1>";}
   		
-	}
+	
 } 
   
 
