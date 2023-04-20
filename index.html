@@ -357,7 +357,7 @@ var dd = document.getElementById("dd");
 // Eğer bugün doğum günü ise mesaj ve yaş gösterin
 
 	if (navigator.userAgent.indexOf('Android') !== -1) {
-  	message.innerHTML = "Android bir tarayıcıda bu sayfa desteklenmiyorum. Lütfen laptop veya pc ye geçiniz.";
+  		message.innerHTML = "Android bir tarayıcıda bu sayfa desteklenmiyorum. Lütfen laptop veya pc ye geçiniz.";
 	} 	
 	else {
 		if (day == birthday && month == birthmonth) {
@@ -379,8 +379,11 @@ var dd = document.getElementById("dd");
 				case 7: mp1.innerHTML = "<audio src='https://cdn.pixabay.com/download/audio/2023/03/14/audio_185a29ae97.mp3?filename=the-last-goodbye-142612.mp3' autoplay loop></audio>"; console.log(randomNum); break;
 			}
 	}else {
-  message.innerHTML = "<h1>Acelecisin! 16.04."+year+"`e kadar beklemen gerekiyor.</h1>";
-}
+		if(day>birthday && month>=birthmonth){
+			message.innerHTML = "<h1>Acelecisin! 16.04."+(year+1)+"`e kadar beklemen gerekiyor.</h1>";
+		}else{message.innerHTML = "<h1>Acelecisin! 16.04."+(year)+"`e kadar beklemen gerekiyor.</h1>";}
+  		
+	}
 } 
   
 
